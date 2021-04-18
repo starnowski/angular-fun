@@ -1,0 +1,24 @@
+## Example
+# srv:
+#   questions:
+#   - srv
+#   - srv ?
+#   references:
+#   - srv-address
+# srv-address:
+#   questions:
+#   - What is srv address ?
+#   - What is srv uri ?
+#   answers:
+#   - TODO
+  # links:
+  # - https://some.link.com
+
+how-to-compile-typescript-files:
+  questions:
+    - How to complie typescript files ?
+    - How to generate javascript files from typescript files ?
+  answers:  |
+    Assuming that you have defined tsconfig.json file in you soure directory then you need to created tsconfig.json file.
+  links:
+    - https://code.visualstudio.com/docs/typescript/typescript-compiling
