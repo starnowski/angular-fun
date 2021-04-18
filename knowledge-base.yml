@@ -22,3 +22,11 @@ how-to-compile-typescript-files:
     Assuming that you have defined tsconfig.json file in you soure directory then you need to created tsconfig.json file.
   links:
     - https://code.visualstudio.com/docs/typescript/typescript-compiling
+how-to-compile-specific-typescript-file:
+  questions:
+    - How to complie specific typescript file ?
+  answers:  |
+    Execute:
+      tsc {your_typescript_file}.ts
+  links:
+    - https://code.visualstudio.com/docs/typescript/typescript-tutorial
