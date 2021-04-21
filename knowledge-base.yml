@@ -30,3 +30,13 @@ how-to-compile-specific-typescript-file:
       tsc {your_typescript_file}.ts
   links:
     - https://code.visualstudio.com/docs/typescript/typescript-tutorial
+how-to-debug-typescript-file:
+  questions:
+    - How to debug typescript file ?
+    - How to debug in typescript ?
+  answers:  |
+    TypeScript debugging supports JavaScript source maps. 
+    To generate source maps for your TypeScript files, 
+    compile with the --sourcemap option or set the sourceMap property in the tsconfig.json file to true.
+  links:
+    - https://code.visualstudio.com/docs/typescript/typescript-debugging
