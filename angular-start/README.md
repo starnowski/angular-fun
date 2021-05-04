@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+### Links:
+
+https://code.visualstudio.com/docs/nodejs/angular-tutorial
+https://medium.com/swlh/angular-unit-testing-jasmine-karma-step-by-step-e3376d110ab4
+
+
