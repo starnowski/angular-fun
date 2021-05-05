@@ -32,4 +32,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 https://code.visualstudio.com/docs/nodejs/angular-tutorial
 https://medium.com/swlh/angular-unit-testing-jasmine-karma-step-by-step-e3376d110ab4
 
+### Parameterized Tests with Jest!
+
+https://dev.to/tinesoft/be-smart-write-parameterized-tests-with-jest-3eab
+
+### Parameterized Tests with Karma and Jasmine!
+
+https://medium.com/@nyablk97/parameterized-tests-with-jasmine-ecadb2856980
 
