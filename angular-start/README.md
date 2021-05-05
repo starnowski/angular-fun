@@ -40,3 +40,10 @@ https://dev.to/tinesoft/be-smart-write-parameterized-tests-with-jest-3eab
 
 https://medium.com/@nyablk97/parameterized-tests-with-jasmine-ecadb2856980
 
+
+### Jasmine spies - mocking parameters
+https://stackoverflow.com/questions/37035321/jasmine-spyon-with-specific-arguments
+
+
+### Angular testing
+https://angular.io/guide/testing-components-scenarios
