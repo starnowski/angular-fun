@@ -47,3 +47,5 @@ https://stackoverflow.com/questions/37035321/jasmine-spyon-with-specific-argumen
 
 ### Angular testing
 https://angular.io/guide/testing-components-scenarios
+
+https://angular.io/guide/component-overview
