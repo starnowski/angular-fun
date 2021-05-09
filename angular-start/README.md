@@ -49,3 +49,8 @@ https://stackoverflow.com/questions/37035321/jasmine-spyon-with-specific-argumen
 https://angular.io/guide/testing-components-scenarios
 
 https://angular.io/guide/component-overview
+
+
+# Component interaction - passing data from parent component to child component
+https://angular.io/guide/component-interaction
+
