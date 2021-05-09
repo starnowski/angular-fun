@@ -40,3 +40,16 @@ how-to-debug-typescript-file:
     compile with the --sourcemap option or set the sourceMap property in the tsconfig.json file to true.
   links:
     - https://code.visualstudio.com/docs/typescript/typescript-debugging
+how-to-create-angular-component:
+  questions:
+    - How to create angular component ?
+  references:
+    - how-to-create-angular-component-via-angular-cli
+how-to-create-angular-component-via-angular-cli:
+  questions:
+    - How to create angular component via angular cli ?
+  answers:  |
+    Install angular cli and execute below command:
+    ng generate component <component-name>
+  links:
+    - https://angular.io/guide/component-overview
