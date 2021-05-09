@@ -53,3 +53,17 @@ how-to-create-angular-component-via-angular-cli:
     ng generate component <component-name>
   links:
     - https://angular.io/guide/component-overview
+what-is-sequence-of-methods-hooks-executed-by-angular:
+  questions:
+    - What is a sequence of methods hooks executed by Angular ?
+  answers:  |
+    ngOnChanges()
+    ngOnInit()
+    ngDoCheck()
+    ngAfterContentInit()
+    ngAfterContentChecked()
+    ngAfterViewInit()
+    ngAfterViewChecked()
+    ngOnDestroy()
+  links:
+    - https://angular.io/guide/lifecycle-hooks
