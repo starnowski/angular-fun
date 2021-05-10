@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Quote } from '../quote';
-import { QuotesService } from '../quotes.service';
 
 @Component({
   selector: 'app-quotes-displayer',
@@ -9,9 +8,7 @@ import { QuotesService } from '../quotes.service';
 })
 export class QuotesDisplayerComponent implements OnInit {
 
-  @Input() qoute: Quote;
-
-  constructor() { }
+  @Input('qoute') qoute: Quote = { text: "", author: "", date: new Date(0) };
 
   ngOnInit(): void {
   }
