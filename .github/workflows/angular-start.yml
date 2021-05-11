@@ -25,7 +25,11 @@ jobs:
         env:
           CI: true
 
-      - run: npm run test
+      # Fix 'Unable to open X display.'
+      # https://remarkablemark.org/blog/2020/12/12/headless-test-in-github-actions-workflow/
+      - run: sudo apt-get install xvfb
+
+      - run: xvfb-run --auto-servernum  npm run test
         working-directory: ./angular-start
         env:
           CI: true
