@@ -1,0 +1,30 @@
+name: Angular start
+
+on:
+  push:
+    paths:
+      - 'angular-start/**'
+
+jobs:
+  mongodb-action:
+    runs-on: ubuntu-latest
+
+    name: Start Node
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - run: npm install
+        working-directory: ./angular-start
+        env:
+          CI: true
+
+      - run: npm run test
+        working-directory: ./angular-start
+        env:
+          CI: true
