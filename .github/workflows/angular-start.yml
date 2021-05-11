@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'angular-start/**'
+      - '.github/workflows/angular-start.yml'
 
 jobs:
   mongodb-action:
