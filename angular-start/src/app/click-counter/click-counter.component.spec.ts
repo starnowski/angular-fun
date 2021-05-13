@@ -24,8 +24,12 @@ describe('ClickCounterComponent', () => {
   });
 
   it('Number of click should be correct', () => {
-    component.initialCount = 15;
+    // component.initialCount = 15;
+    component._count = 15;
     fixture.detectChanges();
+    // fixture.whenStable().then(() => {
+    //   expect(fixture.nativeElement.querySelector('div.click-counter-count').innerText).toEqual('15');
+    // })
     expect(fixture.nativeElement.querySelector('div.click-counter-count').innerText).toEqual('15');
   });
 });
