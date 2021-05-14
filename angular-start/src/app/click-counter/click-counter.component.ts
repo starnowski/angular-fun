@@ -18,10 +18,12 @@ export class ClickCounterComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     // console.log("ngOnInit " + this.initialCount);
     // this._count = this.initialCount;
+    console.log("ngOnInit " + this._count);
   }
 
   ngOnChanges(): void {
     // this._count = this.initialCount;
+    console.log("ngOnChanges " + this._count);
   }
 
   get count()

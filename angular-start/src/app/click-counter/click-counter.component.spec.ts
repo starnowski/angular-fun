@@ -32,4 +32,19 @@ describe('ClickCounterComponent', () => {
     // })
     expect(fixture.nativeElement.querySelector('div.click-counter-count').innerText).toEqual('15');
   });
+  it('Number of click should be correct', () => {
+    component._count = 8;
+    let button = fixture.debugElement.nativeElement.querySelector('button');
+    button.click();
+    button.click();
+    fixture.detectChanges();
+
+    // fixture.whenStable().then(() => {
+    //   expect(fixture.nativeElement.querySelector('div.click-counter-count').innerText).toEqual('15');
+    // })
+    // expect(fixture.nativeElement.querySelector('div.click-counter-count').innerText).toEqual('10');
+    fixture.whenStable().then(() => {
+      expect(fixture.nativeElement.querySelector('div.click-counter-count').innerText).toEqual('10');
+    });
+  });
 });
