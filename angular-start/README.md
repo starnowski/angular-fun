@@ -54,3 +54,5 @@ https://angular.io/guide/component-overview
 # Component interaction - passing data from parent component to child component
 https://angular.io/guide/component-interaction
 
+### Reactive forms
+https://www.concretepage.com/angular/angular-select-option-reactive-form
