@@ -1,1 +1,21 @@
-<p>profile-editor works!</p>
+
+<div class="container">
+    <h1>Hero Form</h1>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name"
+               required
+               formControlName="name">
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select class="form-control" id="gender" name="gender" formControlName="gender" required>
+          <option *ngFor="let gen of genders" [ngValue]="gen">{{gen}}</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!profileForm.valid">Submit</button>
+    </form>
+</div>

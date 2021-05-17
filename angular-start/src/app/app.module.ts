@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { QuotesDisplayerComponent } from './quotes-displayer/quotes-displayer.component';
 import { ClickCounterComponent } from './click-counter/click-counter.component';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProfileEditorComponent } from './profile-editor/profile-editor.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
