@@ -106,3 +106,8 @@ dist
 **/out/*
 
 **/dist/*
+
+# idea subdirectories
+**/.idea/*
+
+*.iml
