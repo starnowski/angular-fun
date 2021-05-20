@@ -56,3 +56,6 @@ https://angular.io/guide/component-interaction
 
 ### Reactive forms
 https://www.concretepage.com/angular/angular-select-option-reactive-form
+
+## Angular routing
+https://angular.io/guide/router
