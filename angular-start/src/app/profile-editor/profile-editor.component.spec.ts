@@ -23,6 +23,16 @@ describe('ProfileEditorComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should render input elements', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    const nameInput = compiled.querySelector('input[id="name"]');
+    const genderInput = compiled.querySelector('select[id="gender"]');
+
+    expect(nameInput).toBeTruthy();
+    expect(genderInput).toBeTruthy();
+  });
+
+
   // it('should update the value of the input field', () => {
   //   const input = fixture.nativeElement.querySelector('input');
   //   const event = createNewEvent('input');
