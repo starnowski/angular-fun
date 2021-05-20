@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Profile } from '../profile';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 // https://angular.io/guide/reactive-forms
 
@@ -16,8 +16,8 @@ export class ProfileEditorComponent implements OnInit {
   // gen: string = 'Male';
 
   profileForm = new FormGroup({
-    name: new FormControl('John Doe'),
-    gender: new FormControl('Male'),
+    name: new FormControl('', [Validators.required]),
+    gender: new FormControl(''),
   });
 
   model = new Profile(18, 'John Doe', 'Male');

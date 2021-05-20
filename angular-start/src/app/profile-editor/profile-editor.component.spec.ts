@@ -32,6 +32,21 @@ describe('ProfileEditorComponent', () => {
     expect(genderInput).toBeTruthy();
   });
 
+  it('should mark empty form as invalid', () => {
+    const form = component.profileForm;
+    expect(form.valid).toBeFalsy();
+  })
+
+  it('should test form validity', () => {
+    const form = component.profileForm;
+    const nameInput = form.controls.name;
+    const genderInput = form.controls.gender;
+    nameInput.setValue('Szymon Doe');
+    genderInput.setValue("Male");
+
+    expect(form.valid).toBeTruthy();
+  })
+
 
   // it('should update the value of the input field', () => {
   //   const input = fixture.nativeElement.querySelector('input');
