@@ -7,13 +7,17 @@ import { QuotesDisplayerComponent } from './quotes-displayer/quotes-displayer.co
 import { ClickCounterComponent } from './click-counter/click-counter.component';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FirstRouteComponent } from './first-route/first-route.component';
+import { SecondRouteComponent } from './second-route/second-route.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuotesDisplayerComponent,
     ClickCounterComponent,
-    ProfileEditorComponent
+    ProfileEditorComponent,
+    FirstRouteComponent,
+    SecondRouteComponent
   ],
   imports: [
     BrowserModule,
