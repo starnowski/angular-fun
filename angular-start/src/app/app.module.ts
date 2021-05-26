@@ -9,6 +9,7 @@ import { ProfileEditorComponent } from './profile-editor/profile-editor.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { FirstRouteComponent } from './first-route/first-route.component';
 import { SecondRouteComponent } from './second-route/second-route.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SecondRouteComponent } from './second-route/second-route.component';
     ClickCounterComponent,
     ProfileEditorComponent,
     FirstRouteComponent,
-    SecondRouteComponent
+    SecondRouteComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
