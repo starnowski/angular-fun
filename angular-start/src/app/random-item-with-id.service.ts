@@ -8,7 +8,7 @@ export class RandomItemWithIdService {
 
   constructor() { }
 
-  public findItems(prefix:string, start:number = 0, limit:number = 25, max:number = 250):ItemWithId[]
+  findItems(prefix:string, start:number = 0, limit:number = 25, max:number = 250):ItemWithId[]
   {
     if (limit > 0)
     { 

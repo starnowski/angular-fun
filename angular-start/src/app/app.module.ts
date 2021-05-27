@@ -12,6 +12,7 @@ import { FirstRouteComponent } from './first-route/first-route.component';
 import { SecondRouteComponent } from './second-route/second-route.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NgSelectExampleComponent } from './ng-select-example/ng-select-example.component';
+import { SelectScrollExampleComponent } from './select-scroll-example/select-scroll-example.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NgSelectExampleComponent } from './ng-select-example/ng-select-example.
     FirstRouteComponent,
     SecondRouteComponent,
     PageNotFoundComponent,
-    NgSelectExampleComponent
+    NgSelectExampleComponent,
+    SelectScrollExampleComponent
   ],
   imports: [
     BrowserModule,
