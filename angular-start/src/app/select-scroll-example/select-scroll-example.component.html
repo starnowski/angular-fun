@@ -14,6 +14,7 @@
            (search)="onSearch($event)"
            [editableSearchTerm]="true"
            [searchFn]="customSearchFn"
+           (open)="onOpen()"
            >
     <ng-template ng-header-tmp>
         <small class="form-text text-muted">Loaded {{photosBuffer.length}} of 250</small>

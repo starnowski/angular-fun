@@ -15,6 +15,7 @@ export class SelectScrollExampleComponent implements OnInit {
   loading = false;
   current = 0;
   currentTerm:string = 'a';
+  initialized = false;
 
   constructor(private randomItemWithIdService: RandomItemWithIdService) {
   }
@@ -24,7 +25,19 @@ export class SelectScrollExampleComponent implements OnInit {
       //     this.photos = photos;
       //     this.photosBuffer = this.photos.slice(0, this.bufferSize);
       // });
-      this.photosBuffer = this.randomItemWithIdService.findItems('a', this.current, this.bufferSize, 250);
+      // this.photosBuffer = this.randomItemWithIdService.findItems('a', this.current, this.bufferSize, 250);
+  }
+
+  onOpen() {
+    if (!this.initialized) {
+      console.log("onOpen() initialized - false ");
+      this.loading = true;
+      setTimeout(() => {
+        this.loading = false;
+        this.photosBuffer = this.randomItemWithIdService.findItems('a', this.current, this.bufferSize, 250);
+        this.initialized = true;
+    }, 200)
+    }
   }
 
   onScrollToEnd() {
