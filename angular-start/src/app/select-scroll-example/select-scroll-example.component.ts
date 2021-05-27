@@ -14,6 +14,7 @@ export class SelectScrollExampleComponent implements OnInit {
   numberOfItemsFromEndBeforeFetchingMore = 10;
   loading = false;
   current = 0;
+  currentTerm:string = 'a';
 
   constructor(private randomItemWithIdService: RandomItemWithIdService) {
   }
@@ -42,13 +43,48 @@ export class SelectScrollExampleComponent implements OnInit {
 
   private fetchMore() {
       this.current++;
-      const more = this.randomItemWithIdService.findItems('a', this.current, this.bufferSize, 250);
+      let term = '';
+      if (this.currentTerm == '' || this.currentTerm == null) 
+      {
+        term = "a";
+      } else {
+        term = this.currentTerm;
+      }
+      const more = this.randomItemWithIdService.findItems(term, this.current, this.bufferSize, 250);
       this.loading = true;
       // using timeout here to simulate backend API delay
       setTimeout(() => {
           this.loading = false;
           this.photosBuffer = this.photosBuffer.concat(more);
       }, 200)
+  }
+
+  
+  onSearch(event:any) {
+    console.log("onSearch term: --> " + event.term + "<--");
+    this.current=0;
+    // this.photosBuffer = [];
+    let term = "a";
+    if (event.term == '' || event.term == null) 
+    {
+      term = "a";
+    } else {
+      term = event.term;
+    }
+    this.currentTerm = term;
+    const more = this.randomItemWithIdService.findItems(term, this.current, this.bufferSize, 250);
+    this.loading = true;
+    // using timeout here to simulate backend API delay
+    setTimeout(() => {
+        this.loading = false;
+        this.photosBuffer = more;
+    }, 200)
+  }
+
+  customSearchFn(term: string, item: ItemWithId) {
+    console.log("customSearchFn term: --> " + term + "<--");
+    term = term.toLowerCase();
+    return true;
   }
 
 }

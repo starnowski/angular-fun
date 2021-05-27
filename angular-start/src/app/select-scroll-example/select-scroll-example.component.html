@@ -10,7 +10,11 @@
            bindValue="thumbnailUrl"
            placeholder="Select photo"
            appendTo="body"
-           (scrollToEnd)="onScrollToEnd()">
+           (scrollToEnd)="onScrollToEnd()"
+           (search)="onSearch($event)"
+           [editableSearchTerm]="true"
+           [searchFn]="customSearchFn"
+           >
     <ng-template ng-header-tmp>
         <small class="form-text text-muted">Loaded {{photosBuffer.length}} of 250</small>
     </ng-template>
