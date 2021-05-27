@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RandomItemWithIdService } from "../random-item-with-id.service";
+import { ItemWithId } from "../item-with-id";
 
 @Component({
   selector: 'app-select-scroll-example',
@@ -8,11 +9,11 @@ import { RandomItemWithIdService } from "../random-item-with-id.service";
 })
 export class SelectScrollExampleComponent implements OnInit {
 
-  photos = [];
-  photosBuffer = [];
-  bufferSize = 50;
+  photosBuffer:ItemWithId[] = [];
+  bufferSize = 25;
   numberOfItemsFromEndBeforeFetchingMore = 10;
   loading = false;
+  current = 0;
 
   constructor(private randomItemWithIdService: RandomItemWithIdService) {
   }
@@ -22,26 +23,26 @@ export class SelectScrollExampleComponent implements OnInit {
       //     this.photos = photos;
       //     this.photosBuffer = this.photos.slice(0, this.bufferSize);
       // });
-      randomItemWithIdService.find
+      this.photosBuffer = this.randomItemWithIdService.findItems('a', this.current, this.bufferSize, 250);
   }
 
   onScrollToEnd() {
       this.fetchMore();
   }
 
-  onScroll({ end }) {
-      if (this.loading || this.photos.length <= this.photosBuffer.length) {
-          return;
-      }
+  // onScroll({ end }) {
+  //     if (this.loading || this.photos.length <= this.photosBuffer.length) {
+  //         return;
+  //     }
 
-      if (end + this.numberOfItemsFromEndBeforeFetchingMore >= this.photosBuffer.length) {
-          this.fetchMore();
-      }
-  }
+  //     if (end + this.numberOfItemsFromEndBeforeFetchingMore >= this.photosBuffer.length) {
+  //         this.fetchMore();
+  //     }
+  // }
 
   private fetchMore() {
-      const len = this.photosBuffer.length;
-      const more = this.photos.slice(len, this.bufferSize + len);
+      this.current++;
+      const more = this.randomItemWithIdService.findItems('a', this.current, this.bufferSize, 250);
       this.loading = true;
       // using timeout here to simulate backend API delay
       setTimeout(() => {
