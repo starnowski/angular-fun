@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RandomItemWithIdService } from "../random-item-with-id.service";
 import { SelectScrollExampleComponent } from './select-scroll-example.component';
+import { By } from '@angular/platform-browser';
 
 describe('SelectScrollExampleComponent', () => {
   let component: SelectScrollExampleComponent;
@@ -30,12 +31,17 @@ describe('SelectScrollExampleComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should invoke service on input click', () => {
+  xit('should invoke service on input click', () => {
     // GIVEN
-    let input = fixture.debugElement.nativeElement.querySelector('.ng-select input.ng-input');
+    // const input = fixture.debugElement.query(By.css('.ng-select .ng-input input'));
+    const input = fixture.debugElement.query(By.css('ng-select'));
 
     // WHEN
-    input.triggerEventHandler('focus', null);
+    // input.click();
+    // input.triggerEventHandler('click', null);
+    const event = createEvent({ tagName: 'INPUT' }) as any;
+    const control = fixture.debugElement.query(By.css('.ng-select-container'));
+    input.triggerEventHandler('mousedown', event);
 
     // THEN
     fixture.detectChanges();
@@ -45,3 +51,19 @@ describe('SelectScrollExampleComponent', () => {
   });
 
 });
+
+function createEvent(target = {}) {
+  return {
+      preventDefault: () => {
+      },
+      target: {
+          className: '',
+          tagName: '',
+          classList: {
+              contains: () => {
+              }
+          },
+          ...target
+      }
+  }
+}

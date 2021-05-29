@@ -21,6 +21,7 @@ export class SelectScrollExampleComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("SelectScrollExampleComponent:ngOnInit");
       // this.http.get<any[]>('https://jsonplaceholder.typicode.com/photos').subscribe(photos => {
       //     this.photos = photos;
       //     this.photosBuffer = this.photos.slice(0, this.bufferSize);
@@ -29,6 +30,7 @@ export class SelectScrollExampleComponent implements OnInit {
   }
 
   onOpen() {
+    console.log("SelectScrollExampleComponent:onOpen");
     if (!this.initialized) {
       console.log("onOpen() initialized - false ");
       this.loading = true;
