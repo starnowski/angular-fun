@@ -65,3 +65,20 @@ https://github.com/ng-select/ng-select
 
 
 https://angular.io/guide/testing-services
+
+### Different version of Node 
+https://www.geeksforgeeks.org/how-to-update-node-js-and-npm-to-next-version/
+
+#### List available Node versions
+nvm ls
+#### Use specific version
+nvm use  15.6.0
+
+
+## Issues
+
+1) Cannot find module '@angular-devkit/build-angular/package.json'
+   https://stackoverflow.com/questions/50333003/could-not-find-module-angular-devkit-build-angular
+```shell
+npm install --save-dev @angular-devkit/build-angular
+```
