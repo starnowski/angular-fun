@@ -63,6 +63,10 @@ https://angular.io/guide/router
 ### Angular ng-select project
 https://github.com/ng-select/ng-select
 
+### Angular generate service
+https://angular.io/tutorial/toh-pt4
+ng generate service hero
+
 ### Angular service testing
 https://angular.io/guide/testing-services
 
