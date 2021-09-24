@@ -13,7 +13,8 @@ describe('ApplicationServiceService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
     providers: [
-            HttpClient
+            HttpClient,
+            HttpHandler
           ]
     });
     const httpClient = TestBed.inject(HttpClient);
