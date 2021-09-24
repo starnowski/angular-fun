@@ -70,6 +70,7 @@ ng generate service hero
 ### Angular service testing
 https://angular.io/guide/testing-services
 
+https://stackblitz.com/angular/lprbxpvnbeq?file=src%2Fapp%2Fmodel%2Fhero.service.spec.ts
 https://stackblitz.com/angular/krdrmngvbqo?file=src%2Fapp%2Fmodel%2Fhero.service.ts
 
 ### Different version of Node 

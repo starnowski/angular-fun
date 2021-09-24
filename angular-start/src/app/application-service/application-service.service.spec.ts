@@ -2,6 +2,9 @@ import { TestBed } from '@angular/core/testing';
 
 import { ApplicationServiceService } from './application-service.service';
 import { ApplicationConfig } from './application-config';
+import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
+
+import { defer } from 'rxjs';
 
 describe('ApplicationServiceService', () => {
   let service: ApplicationServiceService;
@@ -32,3 +35,19 @@ it('should return expected application config (HttpClient called once)', (done: 
   expect(httpClientSpy.get.calls.count()).toBe(1, 'one call');
 });
 });
+
+/**
+ * Create async observable that emits-once and completes
+ * after a JS engine turn
+ */
+function asyncData<T>(data: T) {
+  return defer(() => Promise.resolve(data));
+}
+
+/**
+ * Create async observable error that errors
+ * after a JS engine turn
+ */
+function asyncError<T>(errorObject: any) {
+  return defer(() => Promise.reject(errorObject));
+}
