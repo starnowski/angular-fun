@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { ApplicationServiceService } from './application-service.service';
 import { ApplicationConfig } from './application-config';
-import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpErrorResponse, HttpHandler } from '@angular/common/http';
 
 import { defer } from 'rxjs';
 
