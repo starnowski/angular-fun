@@ -11,8 +11,13 @@ describe('ApplicationServiceService', () => {
   let httpClientSpy: { get: jasmine.Spy };
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
+    TestBed.configureTestingModule({
+    providers: [
+            HttpClient
+          ]
+    });
+    const httpClient = TestBed.inject(HttpClient);
+    httpClientSpy = jasmine.createSpyObj(httpClient, ['get']);
     service = TestBed.inject(ApplicationServiceService);
   });
 
