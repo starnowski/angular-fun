@@ -8,7 +8,7 @@ import { defer } from 'rxjs';
 
 describe('ApplicationServiceService', () => {
   let service: ApplicationServiceService;
-  let httpClientSpy: { get: jasmine.Spy };
+  let httpClientSpy: jasmine.Spy;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -18,7 +18,7 @@ describe('ApplicationServiceService', () => {
           ]
     });
     const httpClient = TestBed.inject(HttpClient);
-    httpClientSpy = jasmine.createSpyObj(httpClient, ['get']);
+    httpClientSpy = spyOn(httpClient, 'get');
     service = TestBed.inject(ApplicationServiceService);
   });
 
@@ -30,7 +30,7 @@ it('should return expected application config (HttpClient called once)', (done: 
   const expectedApplicationConfig: ApplicationConfig = { mockedServer: true, name: 'best app' };
 //     [{ mockedServer: true, name: 'my app' }, { mockedServer: true, name: 'best app' }];
 
-  httpClientSpy.get.and.returnValue(asyncData(expectedApplicationConfig));
+  httpClientSpy.and.returnValue(asyncData(expectedApplicationConfig));
 
   service.getApplicationConfig().subscribe(
     applicationConfig => {
@@ -39,7 +39,7 @@ it('should return expected application config (HttpClient called once)', (done: 
     },
     done.fail
   );
-  expect(httpClientSpy.get.calls.count()).toBe(1, 'one call');
+  expect(httpClientSpy.calls.count()).toBe(1, 'one call');
 });
 });
 
