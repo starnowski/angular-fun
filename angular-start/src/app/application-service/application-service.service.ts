@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 
 import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { ApplicationConfig } from 'application-config';
+import { ApplicationConfig } from './application-config';
 
 
 @Injectable({
@@ -11,7 +11,7 @@ import { ApplicationConfig } from 'application-config';
 })
 export class ApplicationServiceService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getApplicationConfig(): Observable<ApplicationConfig> {
   {
