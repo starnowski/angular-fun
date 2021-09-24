@@ -8,6 +8,7 @@ import { defer } from 'rxjs';
 
 describe('ApplicationServiceService', () => {
   let service: ApplicationServiceService;
+  let httpClientSpy: { get: jasmine.Spy };
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
