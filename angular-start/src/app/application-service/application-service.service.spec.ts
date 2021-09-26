@@ -60,6 +60,23 @@ expectedApplicationConfigs.forEach(function (expectedApplicationConfig) {
   });
 });
 
+it('should return an error when the server returns a 404', (done: DoneFn) => {
+  const errorResponse = new HttpErrorResponse({
+    error: 'test 404 error',
+    status: 404, statusText: 'Not Found'
+  });
+
+  httpClientSpy.and.returnValue(asyncError(errorResponse));
+
+  service.getApplicationConfig().subscribe(
+    applicationConfig => done.fail('expected an error, not app config'),
+    error  => {
+      expect(error.message).toContain('test 404 error');
+      done();
+    }
+  );
+});
+
 });
 
 /**
