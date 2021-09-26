@@ -3,6 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { ApplicationServiceService } from './application-service.service';
 import { ApplicationConfig } from './application-config';
 import { HttpClient, HttpResponse, HttpErrorResponse, HttpHandler } from '@angular/common/http';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { defer } from 'rxjs';
 
@@ -77,6 +78,47 @@ it('should return an error when the server returns a 404', (done: DoneFn) => {
   );
 });
 
+});
+
+describe('ApplicationServiceService with usage of HttpTestingController', () => {
+  let httpClient: HttpClient;
+  let httpTestingController: HttpTestingController;
+  let service: ApplicationServiceService;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      // Import the HttpClient mocking services
+      imports: [ HttpClientTestingModule ],
+      // Provide the service-under-test
+      providers: [ ApplicationServiceService ]
+    });
+
+    // Inject the http, test controller, and service-under-test
+    // as they will be referenced by each test.
+    httpClient = TestBed.inject(HttpClient);
+    httpTestingController = TestBed.inject(HttpTestingController);
+    service = TestBed.inject(ApplicationServiceService);
+  });
+
+  afterEach(() => {
+    // After every test, assert that there are no more pending requests.
+    httpTestingController.verify();
+  });
+
+  it('should return expected application config (called once)', () => {
+    const expectedApplicationConfig: ApplicationConfig = { mockedServer: true, name: 'best app' };
+    service.getApplicationConfig().subscribe(
+      config => expect(config).toEqual(expectedApplicationConfig, 'should return expected application config'),
+      fail
+    );
+
+    // ApplicationServiceService should have made one request to GET application config from expected URL
+    const req = httpTestingController.expectOne('/application-config');
+    expect(req.request.method).toEqual('GET');
+
+    // Respond with the mock application config
+    req.flush(expectedApplicationConfig);
+  });
 });
 
 /**
