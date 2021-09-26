@@ -41,6 +41,25 @@ it('should return expected application config (HttpClient called once)', (done: 
   );
   expect(httpClientSpy.calls.count()).toBe(1, 'one call');
 });
+
+const expectedApplicationConfigs: ApplicationConfig[] = [{ mockedServer: true, name: 'best app' },
+{ mockedServer: false, name: 'my app' }];
+expectedApplicationConfigs.forEach(function (expectedApplicationConfig) {
+  it('should return expected application config (HttpClient called once), name: ' + expectedApplicationConfig.name, (done: DoneFn) => {
+  
+    httpClientSpy.and.returnValue(asyncData(expectedApplicationConfig));
+  
+    service.getApplicationConfig().subscribe(
+      applicationConfig => {
+        expect(applicationConfig).toEqual(expectedApplicationConfig, 'expected application config');
+        done();
+      },
+      done.fail
+    );
+    expect(httpClientSpy.calls.count()).toBe(1, 'one call');
+  });
+});
+
 });
 
 /**
