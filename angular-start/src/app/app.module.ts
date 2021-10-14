@@ -15,6 +15,8 @@ import { NgSelectExampleComponent } from './ng-select-example/ng-select-example.
 import { SelectScrollExampleComponent } from './select-scroll-example/select-scroll-example.component';
 import { ParentComponent } from './child-component-testing/parent/parent.component';
 import { ChildComponent } from './child-component-testing/child/child.component';
+import { CodemirrorBindingComponent } from './codemirror-test1/codemirror-binding/codemirror-binding.component';
+import { CodemirrorModule } from '@ctrl/ngx-codemirror';
 
 @NgModule({
   declarations: [
@@ -28,14 +30,16 @@ import { ChildComponent } from './child-component-testing/child/child.component'
     NgSelectExampleComponent,
     SelectScrollExampleComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    CodemirrorBindingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     NgSelectModule,
-    FormsModule
+    FormsModule,
+    CodemirrorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -95,6 +95,10 @@ https://angular.io/guide/two-way-binding
 ### Angular mock testing components
 https://www.npmjs.com/package/ng-mocks
 
+### Codemirror editor
+https://github.com/scttcper/ngx-codemirror
+https://codemirror.net/doc/manual.html#api
+
 ## Issues
 
 1) Cannot find module '@angular-devkit/build-angular/package.json'
@@ -102,3 +106,8 @@ https://www.npmjs.com/package/ng-mocks
 ```shell
 npm install --save-dev @angular-devkit/build-angular
 ```
+
+
+### Xml tips
+#### Removing xml declarations
+https://stackoverflow.com/questions/15511802/strip-xml-and-doctype-from-string/15511999
