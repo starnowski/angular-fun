@@ -92,6 +92,9 @@ https://angular.io/guide/event-binding
 #### Two-way binding
 https://angular.io/guide/two-way-binding
 
+### Angular mock testing components
+https://www.npmjs.com/package/ng-mocks
+
 ## Issues
 
 1) Cannot find module '@angular-devkit/build-angular/package.json'
