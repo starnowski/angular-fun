@@ -84,6 +84,13 @@ nvm ls
 #### Use specific version
 nvm use  15.6.0
 
+### Angular bindings
+#### Attribute, class, and style bindings
+https://angular.io/guide/attribute-binding
+#### Event binding
+https://angular.io/guide/event-binding
+#### Two-way binding
+https://angular.io/guide/two-way-binding
 
 ## Issues
 
