@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { XmlutilService } from '../xmlutil.service';
 
 import { CodemirrorBindingComponent } from './codemirror-binding.component';
 
@@ -8,7 +9,8 @@ describe('CodemirrorBindingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CodemirrorBindingComponent ]
+      declarations: [ CodemirrorBindingComponent ],
+      providers: [XmlutilService]
     })
     .compileComponents();
   });
