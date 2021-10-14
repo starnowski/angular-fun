@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ChildComponent } from '../child/child.component';
 
 import { ParentComponent } from './parent.component';
+import { MockComponent } from 'ng-mocks';
 
 describe('ParentComponent', () => {
   let component: ParentComponent;
@@ -8,7 +10,7 @@ describe('ParentComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ParentComponent ]
+      declarations: [ ParentComponent, MockComponent(ChildComponent) ]
     })
     .compileComponents();
   });
