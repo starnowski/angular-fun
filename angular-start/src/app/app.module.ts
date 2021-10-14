@@ -13,6 +13,8 @@ import { SecondRouteComponent } from './second-route/second-route.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NgSelectExampleComponent } from './ng-select-example/ng-select-example.component';
 import { SelectScrollExampleComponent } from './select-scroll-example/select-scroll-example.component';
+import { ParentComponent } from './child-component-testing/parent/parent.component';
+import { ChildComponent } from './child-component-testing/child/child.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { SelectScrollExampleComponent } from './select-scroll-example/select-scr
     SecondRouteComponent,
     PageNotFoundComponent,
     NgSelectExampleComponent,
-    SelectScrollExampleComponent
+    SelectScrollExampleComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
