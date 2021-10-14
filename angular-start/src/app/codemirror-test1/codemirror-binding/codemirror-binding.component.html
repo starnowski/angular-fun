@@ -1,9 +1,12 @@
 <p>codemirror-binding works!</p>
 <ngx-codemirror
+  #codemirror
   [(ngModel)]="content"
   [options]="{
     lineNumbers: true,
     theme: 'darcula',
     mode: 'xml'
   }"
+  (paste)="onEdit()"
+  (keydown)="onEdit()"
 ></ngx-codemirror>

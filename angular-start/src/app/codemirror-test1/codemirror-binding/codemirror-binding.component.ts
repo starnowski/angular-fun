@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CodemirrorComponent } from '@ctrl/ngx-codemirror';
 
 @Component({
   selector: 'app-codemirror-binding',
@@ -9,6 +10,9 @@ export class CodemirrorBindingComponent implements OnInit {
 
 
   content:string = "";
+
+  @ViewChild("codemirror")
+  codemirror!: CodemirrorComponent;
 
   constructor() { }
 
