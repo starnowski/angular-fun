@@ -34,6 +34,7 @@ describe('CodemirrorBindingComponent', () => {
 
     // WHEN
     component.content = "<x></x>";
+    component.onEdit();
 
     // THEN
     fixture.detectChanges();
@@ -49,6 +50,7 @@ describe('CodemirrorBindingComponent', () => {
 
     // WHEN
     component.content = "<x></x>";
+    component.onEdit();
 
     // THEN
     fixture.detectChanges();

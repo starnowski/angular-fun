@@ -17,13 +17,15 @@ export class CodemirrorBindingComponent implements OnInit {
   @ViewChild("codemirror")
   codemirror!: CodemirrorComponent;
 
-  constructor(xmlutilService:XmlutilService) { }
+  constructor(private xmlutilService:XmlutilService) { }
 
   ngOnInit(): void {
   }
 
   onEdit(): void {
     console.log("value: ", this.content);
+    this.valid = this.xmlutilService.validate(this.content);
+    this.validChange.emit(this.valid);
   }
 
 }
