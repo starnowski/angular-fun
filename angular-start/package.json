@@ -23,7 +23,8 @@
     "@ng-select/ng-select": "6.1.0",
     "ngx-cacheable": "1.4.3",
     "rxjs": "~6.6.0",
-    "tslib": "^2.0.0"
+    "tslib": "^2.0.0",
+    "codemirror": "~5.63.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.10",
