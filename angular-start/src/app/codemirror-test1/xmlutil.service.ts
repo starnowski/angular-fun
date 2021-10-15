@@ -9,7 +9,13 @@ export class XmlutilService {
 
 
   validate(xml: string):boolean {
-    //TODO
-    return true;
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(xml, "application/xml");
+    const errorNode = doc.querySelector("parsererror");
+    if (errorNode) 
+    {
+      console.debug("errorNode:", errorNode);
+    }
+    return !errorNode;
   }
 }

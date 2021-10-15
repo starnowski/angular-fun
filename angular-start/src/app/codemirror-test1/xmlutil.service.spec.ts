@@ -15,8 +15,7 @@ describe('XmlutilService', () => {
   });
 
   const expectedCorrectXmls: string[] = [
-    `
-    <?xml version="1.0" encoding="UTF-8"?>
+    `<?xml version="1.0" encoding="UTF-8"?>
     <note>
     <to>Tove</to>
     <from>Jani</from>
@@ -31,7 +30,7 @@ describe('XmlutilService', () => {
     `
   ];
   expectedCorrectXmls.forEach(function (expectedCorrectXml) {
-  it('should confirm that xml is correct: ' + expectedCorrectXml, (done: DoneFn) => {
+  it('should confirm that xml is correct: ' + expectedCorrectXml, function() {
     // WHEN
     const result = service.validate(expectedCorrectXml);
 
@@ -41,8 +40,7 @@ describe('XmlutilService', () => {
 });
 
   const expectedInvalidXmls: string[] = [
-    `
-    <?xml version="1.0" encoding="UTF-8"?>
+    `<?xml version="1.0" encoding="UTF-8"?>
     <note>
     <to>
     </note>
@@ -62,7 +60,7 @@ describe('XmlutilService', () => {
     `
   ];
   expectedInvalidXmls.forEach(function (expectedInvalidXml) {
-  it('should confirm that xml is incorrect: ' + expectedInvalidXml, (done: DoneFn) => {
+  it('should confirm that xml is incorrect: ' + expectedInvalidXml, function() {
     // WHEN
     const result = service.validate(expectedInvalidXml);
 
