@@ -108,4 +108,43 @@ describe("contactMap operations", () => {
         // THEN
         expect(results).toEqual(expectedResults);
       });
+
+      it("should run multiple concatMap with error handling for all elements", async () => {
+        // https://iamturns.com/continue-rxjs-streams-when-errors-occur/
+        // GIVEN
+        let obs= of(1, 0, 2, 4)
+        let results = new Array();
+        let expectedResults = [4, -1, -1, 10];
+ 
+        // WHEN
+        let stream = obs.pipe(
+        concatMap( val => {
+            return of(val).pipe(
+                concatMap(v =>{
+                    if (v == 0) {
+                        throw new Error();
+                    }
+                    return of(v + 1);
+                }),
+                concatMap(v =>{
+                    if (v == 3) {
+                        throw new Error();
+                    }
+                    return of(v * 2);
+                }),
+                catchError((err) => {
+                    results.push(-1);
+                    return EMPTY;
+                })
+            );
+        }),
+        )
+        .subscribe(ret=> {
+            results.push(ret);
+        }
+        );
+
+        // THEN
+        expect(results).toEqual(expectedResults);
+      });
 });
