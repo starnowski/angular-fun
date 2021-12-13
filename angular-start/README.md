@@ -111,3 +111,8 @@ npm install --save-dev @angular-devkit/build-angular
 ### Xml tips
 #### Removing xml declarations
 https://stackoverflow.com/questions/15511802/strip-xml-and-doctype-from-string/15511999
+
+
+##### Stream
+https://www.intertech.com/angular-best-practice-rxjs-error-handling/
+https://www.tektutorialshub.com/angular/using-concatmap-in-angular/#concatmap-example

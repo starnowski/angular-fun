@@ -111,6 +111,8 @@ describe("contactMap operations", () => {
 
       it("should run multiple concatMap with error handling for all elements", async () => {
         // https://iamturns.com/continue-rxjs-streams-when-errors-occur/
+        // https://www.intertech.com/angular-best-practice-rxjs-error-handling/
+        // https://www.tektutorialshub.com/angular/using-concatmap-in-angular/#concatmap-example
         // GIVEN
         let obs= of(1, 0, 2, 4)
         let results = new Array();
