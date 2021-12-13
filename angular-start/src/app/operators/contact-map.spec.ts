@@ -77,11 +77,13 @@ describe("contactMap operations", () => {
       });
 
       it("should run concatMap with error handling for all elements", async () => {
+        // https://iamturns.com/continue-rxjs-streams-when-errors-occur/
         // GIVEN
         let obs= of(1, 0, 0, 2)
         let results = new Array();
         let expectedResults = [2, -1, -1, 1];
  
+        // WHEN
         let stream = obs.pipe(
         concatMap( val => {
             return of(val).pipe(
@@ -92,23 +94,14 @@ describe("contactMap operations", () => {
                     return 2 / val;
                 }),
             catchError((err) => {
-                // return throwError(err);
                 results.push(-1);
                 return EMPTY;
             })
             );
         }),
-        // catchError((err) => {
-        //     results.push(-1);
-        //     return EMPTY;
-        // })
         )
         .subscribe(ret=> {
             results.push(ret);
-        }
-        ,
-        err => {
-            results.push(-1);
         }
         );
 
