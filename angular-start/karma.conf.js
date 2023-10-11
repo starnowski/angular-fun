@@ -10,6 +10,7 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
+      require('karma-spec-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
@@ -29,10 +30,27 @@ module.exports = function (config) {
       subdir: '.',
       reporters: [
         { type: 'html' },
-        { type: 'text-summary' }
+        { type: 'text-summary' },
+        { type: 'spec' }
       ]
     },
-    reporters: ['progress', 'kjhtml'],
+    specReporter: {
+      maxLogLines: 50,             // limit number of lines logged per test
+      suppressSummary: true,      // do not print summary
+      suppressErrorSummary: true, // do not print error summary
+      suppressFailed: false,      // do not print information about failed tests
+      suppressPassed: false,      // do not print information about passed tests
+      suppressSkipped: true,      // do not print information about skipped tests
+      showBrowser: false,         // print the browser for each spec
+      showSpecTiming: false,      // print the time elapsed for each spec
+      failFast: true,             // test would finish with error when a first fail occurs
+      prefixes: {
+        success: '    OK: ',      // override prefix for passed tests, default is '✓ '
+        failure: 'FAILED: ',      // override prefix for failed tests, default is '✗ '
+        skipped: 'SKIPPED: '      // override prefix for skipped tests, default is '- '
+      }
+    },
+    reporters: ['progress', 'kjhtml', 'spec'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

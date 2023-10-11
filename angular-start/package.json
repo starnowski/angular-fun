@@ -21,10 +21,10 @@
     "@angular/router": "~11.2.11",
     "@ctrl/ngx-codemirror": "~4.1.1",
     "@ng-select/ng-select": "6.1.0",
+    "codemirror": "~5.63.3",
     "ngx-cacheable": "1.4.3",
     "rxjs": "~6.6.0",
-    "tslib": "^2.0.0",
-    "codemirror": "~5.63.3"
+    "tslib": "^2.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.10",
@@ -40,6 +40,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "karma-spec-reporter": "^0.0.36",
     "ng-mocks": "~12.5.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
