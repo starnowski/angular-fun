@@ -5,7 +5,9 @@ on:
     paths:
       - 'angular-start/**'
       - '.github/workflows/angular-start.yml'
-
+    branches:
+      - main
+      
 jobs:
   mongodb-action:
     runs-on: ubuntu-latest
