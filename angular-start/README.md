@@ -116,3 +116,8 @@ https://stackoverflow.com/questions/15511802/strip-xml-and-doctype-from-string/1
 ##### Stream
 https://www.intertech.com/angular-best-practice-rxjs-error-handling/
 https://www.tektutorialshub.com/angular/using-concatmap-in-angular/#concatmap-example
+
+
+#### How to generate CSV file
+https://www.npmjs.com/package/jsonexport
+
